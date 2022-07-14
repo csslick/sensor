@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sensor</title>
+</head>
+
+<body>
+  <p id="ori">0</p>
+  <p id="motion">0</p>
+
+
+  <script>
+    window.addEventListener('devicemotion', function (e) {
+      var x = event.accelerationIncludingGravity.x;
+      var y = event.accelerationIncludingGravity.y;
+      var z = event.accelerationIncludingGravity.z;
+      //var r = event.accelerationIncludingGravity.r;
+      let ui = document.getElementById('ori');
+      var html = "x: " + x + "<br>y: " + y + "<br>z: " + z;
+      ui.innerHTML = html;
+    }, true);
+  </script>
+</body>
+
+</html>
