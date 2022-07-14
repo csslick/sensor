@@ -14,15 +14,19 @@
 
 
   <script>
-    window.addEventListener('devicemotion', function (e) {
-      var x = event.accelerationIncludingGravity.x;
-      var y = event.accelerationIncludingGravity.y;
-      var z = event.accelerationIncludingGravity.z;
-      //var r = event.accelerationIncludingGravity.r;
+
+    window.addEventListener('deviceorientation', function (e) {
+      var absolute = e.absolute;
+      var alpha    = e.alpha;
+      var beta     = e.beta;
+      var gamma    = e.gamma;
+
       let ui = document.getElementById('ori');
-      var html = "x: " + x + "<br>y: " + y + "<br>z: " + z;
+      var html = "x: " + alpha  + "<br>y: " + beta + "<br>z: " + gamma;
       ui.innerHTML = html;
     }, true);
+
+
   </script>
 </body>
 
